@@ -1,0 +1,23 @@
+	<script>
+			var changeStyle = function (elem, attr, value){ 
+	            elem.style[attr] = value
+                };
+				//定义一个名为changeStyle的函数，其参数有三个，分别是elem attr 和 value，然后将value的值赋给 elem对象的style属性的[attr]项。
+            window.onload = function (){
+	              var oBtn = document.getElementsByTagName("input");//将所有的标签input存储到oBtn
+	              var oDiv = document.getElementById("div1");//将id是div1 的节点存储到oDiv
+	              var oAtt = ["width","height","background","display","display"];//设置变量oAtt为数组、分别表示元素的属性css
+	              var oVal = ["200px","200px","red","none","block"];//变量oVal赋值、数组。
+
+	             for (var i = 0; i < oBtn.length; i++){
+			
+		          oBtn[i].index = i;//建立索引。
+				  console.log(i);
+		          oBtn[i].onclick = function (){
+			            this.index == oBtn.length - 1 && (oDiv.style.cssText = "");//判断是不是最后一个按钮。如果是的就清空这个按钮的样式
+			            changeStyle(oDiv, oAtt[this.index], oVal[this.index]);//如果不是最后一个按钮就是使用changeStyle函数赋值
+						
+		}	
+	}
+};
+</script>
